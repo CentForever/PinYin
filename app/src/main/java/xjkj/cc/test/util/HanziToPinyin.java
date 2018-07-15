@@ -70,6 +70,15 @@ public class HanziToPinyin {
          * original string in source.
          */
         public String target;
+
+        @Override
+        public String toString() {
+            return "Token{" +
+                    "type=" + type +
+                    ", source='" + source + '\'' +
+                    ", target='" + target + '\'' +
+                    '}';
+        }
     }
 
     private HanziToPinyin() {
