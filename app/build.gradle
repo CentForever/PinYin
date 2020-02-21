@@ -6,7 +6,7 @@ android {
 
     defaultConfig {
         applicationId "xjkj.cc.test"
-        minSdkVersion 19
+        minSdkVersion 21
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
@@ -21,4 +21,6 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
+
+    compile 'org.apache.lucene:lucene-icu4j:3.2.0'
 }

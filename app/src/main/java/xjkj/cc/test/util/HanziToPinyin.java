@@ -19,10 +19,10 @@ package xjkj.cc.test.util;
 import android.text.TextUtils;
 import android.util.Log;
 
+import com.ibm.icu.text.Transliterator;
+
 import java.util.ArrayList;
 import java.util.Locale;
-
-import libcore.icu.Transliterator;
 
 
 /**
@@ -82,13 +82,22 @@ public class HanziToPinyin {
     }
 
     private HanziToPinyin() {
-        try {
+        /*try {
             mPinyinTransliterator = new Transliterator(
                     "Han-Latin/Names; Latin-Ascii; Any-Upper");
             mAsciiTransliterator = new Transliterator("Latin-Ascii");
         } catch (IllegalArgumentException e) {
             Log.w(TAG, "Han-Latin/Names transliterator data is missing,"
                   + " HanziToPinyin is disabled");
+        }*/
+
+        try {
+            mPinyinTransliterator = /*new Transliterator(
+                    "Han-Latin/Names; Latin-Ascii; Any-Upper")*/Transliterator.getInstance("Han-Latin/Names; Latin-Ascii; Any-Upper");
+            mAsciiTransliterator = /*new Transliterator("Latin-Ascii")*/Transliterator.getInstance("Latin-Ascii");
+        } catch (IllegalArgumentException e) {
+            Log.w(TAG, "Han-Latin/Names transliterator data is missing,"
+                    + " HanziToPinyin is disabled");
         }
     }
 
